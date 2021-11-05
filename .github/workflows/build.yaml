@@ -9,5 +9,4 @@ jobs:
       - uses: actions/checkout@v2
       - warrenbuckley/Setup-MSBuild@v1
       - run: MSBuild.exe $Env:GITHUB_WORKSPACE\source\GitHubActionsTest\GitHubActionsTest.csproj -p:Configuration=Release
-        timeout: 5
 
