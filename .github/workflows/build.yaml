@@ -8,6 +8,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: microsoft/setup-msbuild@v1
+      - uses: nuget/setup-nuget@v1
       - run: MSBuild.exe $Env:GITHUB_WORKSPACE\source\GitHubActionsTest\GitHubActionsTest.csproj -p:Configuration=Release
+      - run: nuget restore $Env:GITHUB_WORKSPACE\source\UnitTest\UnitTest.csproj
       - run: MSBuild.exe $Env:GITHUB_WORKSPACE\source\UnitTest\UnitTest.csproj -p:Configuration=Release
 
