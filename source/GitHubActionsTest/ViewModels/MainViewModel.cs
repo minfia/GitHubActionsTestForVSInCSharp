@@ -54,10 +54,10 @@ namespace GitHubActionsTest.ViewModels
             _calcRunCommand = new DelegateCommand(
                 _ => {
                     Calculator calc = new Calculator();
-                    if (ArithmeticOperationsIndex == 0) ResultValue = calc.Add(LeftValue, ResultValue);
-                    else if (ArithmeticOperationsIndex == 1) ResultValue = calc.Sub(LeftValue, ResultValue);
-                    else if (ArithmeticOperationsIndex == 2) ResultValue = calc.Mul(LeftValue, ResultValue);
-                    else if (ArithmeticOperationsIndex == 3) ResultValue = calc.Div(LeftValue, ResultValue);
+                    if (ArithmeticOperationsIndex == 0) ResultValue = calc.Add(LeftValue, RightValue);
+                    else if (ArithmeticOperationsIndex == 1) ResultValue = calc.Sub(LeftValue, RightValue);
+                    else if (ArithmeticOperationsIndex == 2) ResultValue = calc.Mul(LeftValue, RightValue);
+                    else if (ArithmeticOperationsIndex == 3) ResultValue = calc.Div(LeftValue, RightValue);
                 });
         }
     }
