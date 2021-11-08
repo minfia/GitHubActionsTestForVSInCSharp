@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GitHubActionsTest.Models
 {
-    class Calculator
+    public class Calculator
     {
         public int Add(int a, int b)
         {
