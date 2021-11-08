@@ -12,6 +12,8 @@ namespace GitHubActionsTest.Models
         {
             int res = 0;
 
+            res = a + b;
+
             return res;
         }
 
