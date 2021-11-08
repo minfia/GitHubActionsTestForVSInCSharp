@@ -3,10 +3,56 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:GitHubActionsTest"
+        xmlns:vw="clr-namespace:GitHubActionsTest"
+        xmlns:vm="clr-namespace:GitHubActionsTest.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="400" Width="400">
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBox Grid.Row="0"
+                 Height="24"
+                 Margin="4"
+                 FontSize="16"
+                 Text="{Binding LeftValue}"/>
+        <ComboBox Grid.Row="1"
+                  Width="56"
+                  Height="40"
+                  FontSize="24"
+                  SelectedItem="{Binding ArithmeticOperationsItem}"
+                  SelectedIndex="{Binding ArithmeticOperationsIndex}"
+                  ItemsSource="{Binding ArithmeticOperations, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedValuePath="Key"
+                  DisplayMemberPath="Value">
+            
+        </ComboBox>
         
+        <TextBox Grid.Row="2"
+                 Height="24"
+                 Margin="4"
+                 FontSize="16"
+                 Text="{Binding RightValue}"/>
+
+        <Button Grid.Row="3"
+                Width="64"
+                Height="64"
+                Content="計算"
+                FontSize="20"
+                Command="{Binding CalcRunCommand}"/>
+        
+        <TextBox Grid.Row="4"
+                 Height="24"
+                 Margin="4"
+                 FontSize="16"
+                 Text="{Binding ResultValue}"/>
     </Grid>
 </Window>
